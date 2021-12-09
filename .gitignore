@@ -1,0 +1,7 @@
+/.vs
+/BlazorYololEmulator/Shared/obj
+/BlazorYololEmulator/Shared/bin
+/BlazorYololEmulator/Server/obj
+/BlazorYololEmulator/Server/bin
+/BlazorYololEmulator/Client/bin
+/BlazorYololEmulator/Client/obj
