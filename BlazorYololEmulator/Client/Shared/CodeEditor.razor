@@ -1,8 +1,12 @@
-﻿<div>
+﻿@inject NavigationManager NavManager
+
+<div>
     <textarea id="code-input">
 
     </textarea>
 </div>
+
+<p>Current count: @currentCount</p>
 
 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
@@ -40,5 +44,18 @@
 </table>
 
 @code {
+    int currentCount = 0;
+    
+    protected override void OnInitialized()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var uriBuilder = new UriBuilder(uri);
+        var q = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+        int.TryParse(q["initialCount"] ?? "", out currentCount);
+    }
 
+    void IncrementCount()
+    {
+        currentCount++;
+    }
 }
