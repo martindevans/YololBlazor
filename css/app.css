@@ -1,7 +1,29 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+:root {
+    --body-bg: #181818;
+    --body-color: #E6E6E6;
+    --bs-gutter-x: 0px;
+}
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', sans-serif, Helvetica, Arial, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-color)
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar {
+    padding-left: 1em;
+}
+
+.navbar-brand {
+    font-family: Bungee;
 }
 
 h1:focus {
