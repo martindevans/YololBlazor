@@ -1,12 +1,15 @@
-﻿@inject NavigationManager NavManager
+﻿@using System.Text
+@using Yolol.Execution
+@using System.Globalization
+@inject NavigationManager NavManager
 
 <div>
-    <textarea id="code-input">
-
+    <textarea id="code-input" @oninput="@OnCodeChange" @onchange="@OnCodeChange">
+        @State.Code
     </textarea>
+    
+    <div>@Error</div>
 </div>
-
-<p>Current count: @currentCount</p>
 
 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
@@ -32,30 +35,64 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">:a</th>
-            <td>"Mark"</td>
-        </tr>
-        <tr>
-            <th scope="row">b</th>
-            <td>174.3</td>
-        </tr>
+        @foreach (var (key, value) in State.Values)
+        {
+            <tr>
+                <th>@key</th>
+                <td>@value</td>
+            </tr>
+        }
     </tbody>
 </table>
 
 @code {
-    int currentCount = 0;
+    private SerializedState _state = new SerializedState();
+    public SerializedState State
+    {
+        get => _state;
+        set
+        {
+            _state = value;
     
+            var result = Parser.ParseProgram(_state.Code);
+            Error = result.IsOk ? null : result.Err;
+        }
+    }
+
+    private Parser.ParseError? Error;
+
     protected override void OnInitialized()
+    {
+        InitializeFromUrl();
+    }
+
+    private void InitializeFromUrl()
     {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
         var uriBuilder = new UriBuilder(uri);
         var q = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
-        int.TryParse(q["initialCount"] ?? "", out currentCount);
+
+        var state64 = q["state"];
+        if (state64 != null)
+            State = SerializedState.FromBase64(state64);
     }
 
-    void IncrementCount()
+    public void OnCodeChange(ChangeEventArgs args)
     {
-        currentCount++;
+        if (args.Value is not string code)
+            return;
+
+        // Update state and put it into the URI
+        State = new SerializedState
+        {
+            Code = code,
+            ProgramCounter = State.ProgramCounter,
+            Values = new Dictionary<string, Value>
+            {
+                { "a", new Value(DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)) }
+            }
+        };
+        var uri = NavManager.GetUriWithQueryParameter("state", State.ToBase64());
+        NavManager.NavigateTo(uri);
     }
 }

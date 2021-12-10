@@ -1,4 +1,6 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+﻿@inject NavigationManager NavManager
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Yolol Emulator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,6 +11,18 @@
             <a class="nav-item nav-link" href="https://yolol.info/">Yolol</a>
             <a class="nav-item nav-link" href="https://store.steampowered.com/app/454120/Starbase/">StarBase</a>
             <a class="nav-item nav-link" href="https://github.com/martindevans/YololBlazor">GitHub</a>
+            <a class="nav-item nav-link" href="@CurrentUri" @onmouseover="@OnMouseOver"><span class="oi oi-share-boxed"></span></a>
         </div>
+
     </div>
 </nav>
+
+@code
+{
+    public string CurrentUri = "";
+
+    void OnMouseOver()
+    {
+        CurrentUri = NavManager.Uri;
+    }
+}
