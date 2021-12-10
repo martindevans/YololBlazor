@@ -1,15 +1,50 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavManager
 
 <div class="container-fluid">
     
     <Navbar />
-    <CodeEditor />
+    
+    <div class="row">
+        <div class="col-md-12 my-3"></div>
+    </div>
 
     <div class="row">
-        <div class="col-md-1">.col-md-1</div>
-        <div class="col-md-7">.col-md-7</div>
-        <div class="col-md-4">.col-md-4</div>
+        <div class="col"></div>
+        <div class="col col-md-auto">
+            <DebugControls State="@_state"></DebugControls>
+        </div>
+        <div class="col"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 my-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col">
+            <CodeEditor State="@_state"/>
+        </div>
+        <div class="col">
+            <StateDisplay State="@_state"/>
+        </div>
     </div>
     
 
 </div>
+
+@code
+{
+    readonly StateManager _state = new StateManager();
+
+    protected override void OnInitialized()
+    {
+        // Initialise state from URL
+        var uri = new UriBuilder(NavManager.ToAbsoluteUri(NavManager.Uri));
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        var state64 = query["state"];
+        if (state64 != null)
+            _state.State = SerializedState.FromBase64(state64);
+    }
+}

@@ -1,98 +1,38 @@
 ﻿@using System.Text
 @using Yolol.Execution
 @using System.Globalization
+@using System.Collections.ObjectModel
 @inject NavigationManager NavManager
 
 <div>
     <textarea id="code-input" @oninput="@OnCodeChange" @onchange="@OnCodeChange">
-        @State.Code
+        @State.State.Code
     </textarea>
     
-    <div>@Error</div>
+    <div>@State.Error</div>
 </div>
-
-<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-    
-    <div class="input-group">
-        <div class="input-group-text" id="btnGroupAddon">X</div>
-        <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
-    </div>
-</div>
-
-<table class="table table-dark table-striped table-hover table-borderless">
-    <thead>
-        <tr>
-            <th scope="col">Identifier</th>
-            <th scope="col">Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var (key, value) in State.Values)
-        {
-            <tr>
-                <th>@key</th>
-                <td>@value</td>
-            </tr>
-        }
-    </tbody>
-</table>
 
 @code {
-    private SerializedState _state = new SerializedState();
-    public SerializedState State
-    {
-        get => _state;
-        set
-        {
-            _state = value;
-    
-            var result = Parser.ParseProgram(_state.Code);
-            Error = result.IsOk ? null : result.Err;
-        }
-    }
 
-    private Parser.ParseError? Error;
-
-    protected override void OnInitialized()
-    {
-        InitializeFromUrl();
-    }
-
-    private void InitializeFromUrl()
-    {
-        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
-        var uriBuilder = new UriBuilder(uri);
-        var q = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
-
-        var state64 = q["state"];
-        if (state64 != null)
-            State = SerializedState.FromBase64(state64);
-    }
+    [Parameter]
+    public StateManager State { get; set; } = new();
 
     public void OnCodeChange(ChangeEventArgs args)
     {
         if (args.Value is not string code)
             return;
 
-        // Update state and put it into the URI
-        State = new SerializedState
+        // Update state
+        State.State = new SerializedState
         {
             Code = code,
-            ProgramCounter = State.ProgramCounter,
-            Values = new Dictionary<string, Value>
-            {
-                { "a", new Value(DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)) }
-            }
+            ProgramCounter = State.State.ProgramCounter,
+            Values = State.State.Values
         };
-        var uri = NavManager.GetUriWithQueryParameter("state", State.ToBase64());
+        
+        // Put state into URI
+        var base64 = State.State.ToBase64();
+        var uri = NavManager.GetUriWithQueryParameter("state", string.IsNullOrEmpty(base64) ? null : base64);
         NavManager.NavigateTo(uri);
     }
 }

@@ -1,0 +1,34 @@
+﻿@using System.Text
+@using Yolol.Execution
+@using System.Globalization
+@using System.Collections.ObjectModel
+@inject NavigationManager NavManager
+
+<table class="table table-dark table-striped table-hover table-borderless">
+    <thead>
+    <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Line</th>
+            <td>@State.State.ProgramCounter</td>
+        </tr>
+
+        @foreach (var (key, value) in State.State.Values)
+        {
+            <tr>
+                <th>@key</th>
+                <td>@value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    [Parameter]
+    public StateManager State { get; set; } = new();
+}

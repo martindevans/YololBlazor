@@ -1,0 +1,35 @@
+﻿@using System.Text
+@using Yolol.Execution
+@using System.Globalization
+@using System.Collections.ObjectModel
+@inject NavigationManager NavManager
+
+<div class="btn-group">
+    <a href="#" class="btn btn-primary shadow-none @PlayPauseClass" @onclick="@OnClickPlayPause"><span class="oi @PlayPauseIconClass"></span></a>
+    <a href="#" class="btn btn-primary shadow-none" @onclick="@OnClickStep"><span class="oi oi-media-step-forward"></span></a>
+</div>
+
+@code {
+
+    [Parameter]
+    public StateManager State { get; set; } = new();
+
+    public string PlayPauseClass => State.IsRunning ? "active" : "";
+    public string PlayPauseIconClass => State.IsRunning ? "oi-media-pause" : "oi-media-play";
+
+    void OnClickPlayPause(MouseEventArgs args)
+    {
+        if (State.IsRunning)
+            State.Pause();
+        else
+            State.Run();
+    }
+
+    void OnClickStep(MouseEventArgs args)
+    {
+        if (State.IsRunning)
+            State.Pause();
+
+        State.Step();
+    }
+}

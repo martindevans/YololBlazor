@@ -28,6 +28,9 @@ namespace BlazorYololEmulator.Client
 
         public static SerializedState FromBase64(string base64)
         {
+            if (base64 == "")
+                return new SerializedState();
+
             var bytes = Decompress(Convert.FromBase64String(base64));
             var json = Encoding.UTF8.GetString(bytes);
             return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? new SerializedState();
@@ -35,6 +38,9 @@ namespace BlazorYololEmulator.Client
 
         public string ToBase64()
         {
+            if (string.IsNullOrWhiteSpace(Code) && Values.Count == 0 && ProgramCounter == 0)
+                return "";
+
             var json = JsonConvert.SerializeObject(this, JsonConfig);
             var bytes = Compress(Encoding.UTF8.GetBytes(json));
             return Convert.ToBase64String(bytes);
