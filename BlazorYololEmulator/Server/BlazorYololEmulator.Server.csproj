@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\BlazorYololEmulator.Client.csproj" />
-    <ProjectReference Include="..\Shared\BlazorYololEmulator.Shared.csproj" />
   </ItemGroup>
 
 

@@ -13,6 +13,6 @@
 
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount += Parser.ParseProgram("a=1").IsOk ? 11 : 0;
     }
 }
