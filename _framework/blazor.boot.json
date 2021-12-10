@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazorYololEmulator.Client.dll": "sha256-AWDKngTh\/OpK82DTdF44TOz3c6DVahjfV0cCCg2d3qI=",
+      "BlazorYololEmulator.Client.dll": "sha256-wGxJs4Rhnfc7YdkV5qkKy8CMzxf4cDEBOPQtS96siYg=",
       "Microsoft.AspNetCore.Components.dll": "sha256-Lh+wsYU4pQvx\/gLHhRikzm8+X5z5D8wY8byD1MWQ7vU=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LxZ7HJ8eLJ8fbfDHpXkGb9VhtdUfHxfLq7a9SmRxCiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
@@ -52,7 +52,7 @@
       "System.Private.Xml.dll": "sha256-zqMaffUyYGD4fLN4QoNoqCTYRXWczoPNrbRjqQfpyog=",
       "System.Private.Xml.Linq.dll": "sha256-iMzUzwlYYMfKLnNMK9byte8w0H1yWjyoj4h6OwDitRs=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-lWLrP2SkeEtjbEdvnCokKxYOu+LNxC\/N+o9fErOPhWw=",
-      "System.Runtime.dll": "sha256-RSCXeZrp8YV8\/dZ1Ab65vxk3sYd5t70EvC62fT5j3cE=",
+      "System.Runtime.dll": "sha256-P1ZDYe6Lg6PxICfARg1BPN24KwkHK6\/LiAtE7ERe0TY=",
       "System.Runtime.Numerics.dll": "sha256-xJ3Gtg4K9obKDZjAmjalyBpHn2Sytyp7yhdNptKNjdU=",
       "System.Runtime.Serialization.Formatters.dll": "sha256-LMM\/R1iFMRt1mGhOHyZmNFiUwQe3QXLjJMKuV9fGR2o=",
       "System.Runtime.Serialization.Primitives.dll": "sha256-ujTAfnfIltv8ZzpRCjLW1c07K0u55fmuOKptQWCiu4Y=",
