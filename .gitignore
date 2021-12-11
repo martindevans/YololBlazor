@@ -7,3 +7,5 @@
 /BlazorYololEmulator/Client/obj
 /BlazorYololEmulator.Shared/bin
 /BlazorYololEmulator.Shared/obj
+/BlazorYololEmulator.Shared/nuget-push.ps1
+/BlazorYololEmulator.Shared/*.bak
