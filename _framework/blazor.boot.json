@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazorYololEmulator.Client.dll": "sha256-P8o4gvdk\/Z5AUDPwvW4UH6eJvW250ZUr0L35b2p8XXE=",
-      "BlazorYololEmulator.Shared.dll": "sha256-ermWtAMNlcHw7HPtsBGSzOk1fYIoJX0yrZW1vYfORjA=",
+      "BlazorYololEmulator.Client.dll": "sha256-6kn8BG9CwLzS7Q662bVfWzy+3MS0Yk30E2KlsU\/4tJI=",
+      "BlazorYololEmulator.Shared.dll": "sha256-0qklG5zityD3Nb78i3QaadmfOq2H3vTAyrj2J6JGUP8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-+wsE\/R0uxGZI+f6ri3eDtUm\/kun35jVIGSkM6LqKhUk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LxZ7HJ8eLJ8fbfDHpXkGb9VhtdUfHxfLq7a9SmRxCiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
