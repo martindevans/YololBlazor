@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazorYololEmulator.Client.dll": "sha256-jwlK32+\/8RdXhiKXxqTCBsX7gfjmx\/NnJweqCnnxTFA=",
-      "BlazorYololEmulator.Shared.dll": "sha256-lGxxgLbmptU3PVAU34T\/VSe\/bK6O\/Bzh9B\/1E90C2Ag=",
+      "BlazorYololEmulator.Client.dll": "sha256-P8o4gvdk\/Z5AUDPwvW4UH6eJvW250ZUr0L35b2p8XXE=",
+      "BlazorYololEmulator.Shared.dll": "sha256-ermWtAMNlcHw7HPtsBGSzOk1fYIoJX0yrZW1vYfORjA=",
       "Microsoft.AspNetCore.Components.dll": "sha256-+wsE\/R0uxGZI+f6ri3eDtUm\/kun35jVIGSkM6LqKhUk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LxZ7HJ8eLJ8fbfDHpXkGb9VhtdUfHxfLq7a9SmRxCiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
@@ -40,7 +40,7 @@
       "System.Drawing.dll": "sha256-myLZXN+\/HR3izJLBl0t+pyiR7RsyNULy\/g+E8AsPiuc=",
       "System.Drawing.Primitives.dll": "sha256-HMM2+3tC8A6i5bzxpo\/d28xTT64cAjLzNqfO20ITZic=",
       "System.IO.Compression.dll": "sha256-ldN+SMilhww+wb5eEIH7k3PXy2cT488nVi1uTGVNNk0=",
-      "System.Linq.dll": "sha256-3lpVuVpi4NTr0FB+o+3\/RI0sptK9H90\/tVvvJPVYHYQ=",
+      "System.Linq.dll": "sha256-zvayhr2zoum4Ddyrgsvk6ucACoi6uOBm7qnspy3Ag8c=",
       "System.Linq.Expressions.dll": "sha256-VEHcsTJtHo8WrxMZRXDPdQwF8zQn5GyHtvyAkPwM3YU=",
       "System.Memory.dll": "sha256-b4UbzUFF+12IxOgMWNuYpuTsaKKmRNqniwta120dCtU=",
       "System.Net.Http.dll": "sha256-teOj8vLQrLcvzoqF\/1OZNt2pa0ZGP4HNSV9jiDNI5yI=",
