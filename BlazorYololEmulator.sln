@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Server"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Client", "BlazorYololEmulator\Client\BlazorYololEmulator.Client.csproj", "{0090E326-9662-479F-B26D-D2D4CE294DA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYololEmulator.Shared", "BlazorYololEmulator.Shared\BlazorYololEmulator.Shared.csproj", "{642DFCF9-DBA0-4172-84FE-07B6B74B7624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

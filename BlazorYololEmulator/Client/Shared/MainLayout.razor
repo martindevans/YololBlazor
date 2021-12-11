@@ -1,4 +1,5 @@
 ﻿@using BlazorYololEmulator.Client.Core
+@using BlazorYololEmulator.Shared
 @inherits LayoutComponentBase
 @inject NavigationManager NavManager
 @inject StateManager StateManager
@@ -45,6 +46,6 @@
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         var state64 = query["state"];
         if (state64 != null)
-            StateManager.Load(SerializedState.FromBase64(state64));
+            StateManager.Load(SerializedState.Deserialize(state64));
     }
 }

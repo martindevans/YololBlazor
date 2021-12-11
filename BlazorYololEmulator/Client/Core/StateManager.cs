@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorYololEmulator.Shared;
+using Microsoft.AspNetCore.Components;
 using Yolol.Execution;
 using Yolol.Grammar;
 
@@ -53,7 +54,7 @@ namespace BlazorYololEmulator.Client.Core
         /// </summary>
         private void UpdateUrl()
         {
-            var serialised = Save().ToBase64();
+            var serialised = Save().Serialize();
             var uri = _navManager.GetUriWithQueryParameter("state",
                 string.IsNullOrEmpty(serialised) ? null : serialised);
             _navManager.NavigateTo(uri);

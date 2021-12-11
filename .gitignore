@@ -5,3 +5,5 @@
 /BlazorYololEmulator/Server/bin
 /BlazorYololEmulator/Client/bin
 /BlazorYololEmulator/Client/obj
+/BlazorYololEmulator.Shared/bin
+/BlazorYololEmulator.Shared/obj
