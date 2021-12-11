@@ -13,6 +13,10 @@ public class SerializedState
 
     public string Code { get; }
     public IReadOnlyDictionary<string, Value> Values { get; }
+
+    /// <summary>
+    /// Zero based program counter
+    /// </summary>
     public int ProgramCounter { get; }
 
     public SerializedState(string code, IReadOnlyDictionary<string, Value> values, int programCounter)
