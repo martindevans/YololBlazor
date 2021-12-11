@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazorYololEmulator.Client.dll": "sha256-Tx4ZA3PLH73t4bCXyDNZD7ZDAXJQy5uNYVnDi60MmRk=",
-      "BlazorYololEmulator.Shared.dll": "sha256-+EFHeTxm11fFsFAuXUVDf41Xc6GoJwt+FXyHBdpVOx8=",
+      "BlazorYololEmulator.Client.dll": "sha256-MnmM7y7hPbuj7FVeuKoUrKmxpqUdv4OZVUS9j2aW8CU=",
+      "BlazorYololEmulator.Shared.dll": "sha256-duqKH66XC9B8J9pprZa84pUwxUlw3Ts8c8ooE2xI1Sw=",
       "Microsoft.AspNetCore.Components.dll": "sha256-+wsE\/R0uxGZI+f6ri3eDtUm\/kun35jVIGSkM6LqKhUk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LxZ7HJ8eLJ8fbfDHpXkGb9VhtdUfHxfLq7a9SmRxCiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
@@ -63,7 +63,7 @@
       "System.Text.Json.dll": "sha256-nZOQ0hlFkICleNvlz427bALwbtW8waujPRsfPqfDqV8=",
       "System.Text.RegularExpressions.dll": "sha256-VUnItzBbXvz7ZZzAFgnuOY9GMr8RXG1OVyY7+RFHrEg=",
       "System.Threading.dll": "sha256-c6rtn8eoREuvvGVIjxVtnLalZDdSNy6Fr7LAPkNUprU=",
-      "System.Web.HttpUtility.dll": "sha256-wcgaPRSQQJD58cbe\/bjhQHUDpjVq6E4UxDXQ5YJzp\/w=",
+      "System.Web.HttpUtility.dll": "sha256-T9fbxIp0l\/2YqaB2xlDHzTFOuYLfrxtZ8C8baklcoko=",
       "Yolol.dll": "sha256-FS0deOxWI0RBoYMHjoz9mGeB6dtX7Qk\/vKagUQ7fvXE="
     },
     "extensions": null,
