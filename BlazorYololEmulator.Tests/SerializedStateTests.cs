@@ -11,7 +11,9 @@ namespace BlazorYololEmulator.Tests
         [TestMethod]
         public void RoundTrip()
         {
-            var state1 = new SerializedState("code=1", new Dictionary<string, Value> { { "a", Number.One } }, 10);
+            var code = "h = \",7,10,13,19,23,28,31,32,44,49,68,70,79,82,86,91,94,97,100,103,109,\"";
+
+            var state1 = new SerializedState(code, new Dictionary<string, Value> { { "a", Number.One } }, 10);
             var serialized = state1.Serialize();
             var state2 = SerializedState.Deserialize(serialized);
 
