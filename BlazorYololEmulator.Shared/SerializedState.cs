@@ -90,7 +90,6 @@ public class SerializedState
     {
         public override void WriteJson(JsonWriter writer, Value value, JsonSerializer serializer)
         {
-            Console.WriteLine(value);
             if (value.Type == Yolol.Execution.Type.String)
                 writer.WriteValue(value.String.ToString());
             else
