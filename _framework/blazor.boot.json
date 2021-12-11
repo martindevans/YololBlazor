@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "BlazorYololEmulator.Client.dll": "sha256-jwlK32+\/8RdXhiKXxqTCBsX7gfjmx\/NnJweqCnnxTFA=",
-      "BlazorYololEmulator.Shared.dll": "sha256-ZlSSaONvC1OnTHaUB1rXr97ZHY+00usalgZegdcDDDE=",
+      "BlazorYololEmulator.Shared.dll": "sha256-lGxxgLbmptU3PVAU34T\/VSe\/bK6O\/Bzh9B\/1E90C2Ag=",
       "Microsoft.AspNetCore.Components.dll": "sha256-+wsE\/R0uxGZI+f6ri3eDtUm\/kun35jVIGSkM6LqKhUk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LxZ7HJ8eLJ8fbfDHpXkGb9VhtdUfHxfLq7a9SmRxCiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Ph2ZOl\/LOY2cCUG\/S2iA61YUWIsDlcAHFxzdTG43rPw=",
@@ -34,7 +34,6 @@
       "System.ComponentModel.dll": "sha256-BEsW5OETK8mR6NoOcDDEABlIOnHLBwTDAdqThvr3xps=",
       "System.ComponentModel.Primitives.dll": "sha256-B7wjDv56rLNzE2UIrO+XuZgj2WR+LuqRpxosvppkH\/k=",
       "System.ComponentModel.TypeConverter.dll": "sha256-3pF4SJQHOIhBBiDZKaAp0mghoQskQJ79z4wtQ4ZKtvM=",
-      "System.Console.dll": "sha256-QkA304yRxbHFjk16jN+l4b6by0pFiVSRqKNTOPiOs+g=",
       "System.Data.Common.dll": "sha256-m2V\/iAs1MCm4gxK0KwIOiabCd5aCMZNjV+FpE1p9FBw=",
       "System.Diagnostics.TraceSource.dll": "sha256-WuNAH1xN89Wle4+k7ICpvkjvV+3y7VAQh5hCVJaYDII=",
       "System.dll": "sha256-rFMZGggawTEgR+1\/wxo6rVc33DGl6yRKgeobdnLzUmQ=",
@@ -47,7 +46,7 @@
       "System.Net.Http.dll": "sha256-teOj8vLQrLcvzoqF\/1OZNt2pa0ZGP4HNSV9jiDNI5yI=",
       "System.Net.Primitives.dll": "sha256-RXH8inIMafgjW3mOVl9vGidNExDCkKMBfQN1oAPnjV4=",
       "System.ObjectModel.dll": "sha256-VvxAc5npZt+XXiJ0JzPP9eQxvzQTz0fgSYeXxqKi+Yo=",
-      "System.Private.CoreLib.dll": "sha256-vYfUWdVcBDf5Y3wRyR2fvXNti9Jj0uWjjkbEVjqC0QI=",
+      "System.Private.CoreLib.dll": "sha256-M+9qhmjZR56cwCtretV3GnvA4tIj9PW4qlBbAsXJQ9A=",
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-kDaFZ8JzJX64MXnbsKUJ0FL1iX+YfrRgztx5ai84Le8=",
       "System.Private.Uri.dll": "sha256-Vn1ggMmzktFu1RlHRUHeJBGuvZ8mbclQ86BYpEVa0mQ=",
       "System.Private.Xml.dll": "sha256-zqMaffUyYGD4fLN4QoNoqCTYRXWczoPNrbRjqQfpyog=",
