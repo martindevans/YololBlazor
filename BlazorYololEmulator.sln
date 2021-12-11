@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Server"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Client", "BlazorYololEmulator\Client\BlazorYololEmulator.Client.csproj", "{0090E326-9662-479F-B26D-D2D4CE294DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYololEmulator.Shared", "BlazorYololEmulator.Shared\BlazorYololEmulator.Shared.csproj", "{642DFCF9-DBA0-4172-84FE-07B6B74B7624}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYololEmulator.Tests", "BlazorYololEmulator.Tests\BlazorYololEmulator.Tests.csproj", "{F9F7387E-2483-4079-858C-71643ABE2927}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Shared", "BlazorYololEmulator\Shared\BlazorYololEmulator.Shared.csproj", "{88DAE508-31F1-41BF-B808-5298B69500DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,14 @@ Global
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0090E326-9662-479F-B26D-D2D4CE294DA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{642DFCF9-DBA0-4172-84FE-07B6B74B7624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F7387E-2483-4079-858C-71643ABE2927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F7387E-2483-4079-858C-71643ABE2927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F7387E-2483-4079-858C-71643ABE2927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F7387E-2483-4079-858C-71643ABE2927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DAE508-31F1-41BF-B808-5298B69500DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DAE508-31F1-41BF-B808-5298B69500DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DAE508-31F1-41BF-B808-5298B69500DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DAE508-31F1-41BF-B808-5298B69500DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

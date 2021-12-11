@@ -14,8 +14,4 @@
     <PackageReference Include="Yolol" Version="14.8.13" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\BlazorYololEmulator.Shared\BlazorYololEmulator.Shared.csproj" />
-  </ItemGroup>
-
 </Project>

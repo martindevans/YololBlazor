@@ -5,7 +5,8 @@
 /BlazorYololEmulator/Server/bin
 /BlazorYololEmulator/Client/bin
 /BlazorYololEmulator/Client/obj
-/BlazorYololEmulator.Shared/bin
-/BlazorYololEmulator.Shared/obj
+/BlazorYololEmulator.Tests/bin
+/BlazorYololEmulator.Tests/obj
 /BlazorYololEmulator.Shared/nuget-push.ps1
 /BlazorYololEmulator.Shared/*.bak
+/BlazorYololEmulator/Shared/nuget-push.ps1
