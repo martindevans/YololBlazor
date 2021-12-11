@@ -76,7 +76,10 @@ namespace BlazorYololEmulator.Client.Core
                 name = name.ToLowerInvariant();
                 if (!_variables.TryGetValue(name, out var value))
                 {
-                    value = new Variable();
+                    value = new Variable
+                    {
+                        Value = Number.Zero
+                    };
                     _variables[name] = value;
                 }
                 return value;

@@ -38,7 +38,8 @@ public class SerializedState
             return Default;
 
         var base64 = HttpUtility.UrlDecode(urlEncoded);
-        var bytes = Decompress(Convert.FromBase64String(base64));
+        var compressed = Convert.FromBase64String(base64);
+        var bytes = Decompress(compressed);
         var json = Encoding.UTF8.GetString(bytes);
 
         return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? Default;
@@ -50,8 +51,9 @@ public class SerializedState
             return "";
 
         var json = JsonConvert.SerializeObject(this, JsonConfig);
-        var bytes = Compress(Encoding.UTF8.GetBytes(json));
-        var base64 = Convert.ToBase64String(bytes);
+        var bytes = Encoding.UTF8.GetBytes(json);
+        var compressed = Compress(bytes);
+        var base64 = Convert.ToBase64String(compressed);
         var urlEncoded = HttpUtility.UrlEncode(base64);
 
         return urlEncoded;
