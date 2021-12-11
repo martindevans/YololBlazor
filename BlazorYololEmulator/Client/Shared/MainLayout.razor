@@ -1,5 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorYololEmulator.Client.Core
+@inherits LayoutComponentBase
 @inject NavigationManager NavManager
+@inject StateManager StateManager
 
 <div class="container-fluid">
     
@@ -12,7 +14,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col col-md-auto">
-            <DebugControls State="@_state"></DebugControls>
+            <DebugControls></DebugControls>
         </div>
         <div class="col"></div>
     </div>
@@ -24,10 +26,10 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col">
-            <CodeEditor State="@_state"/>
+            <CodeEditor/>
         </div>
         <div class="col">
-            <StateDisplay State="@_state"/>
+            <StateDisplay/>
         </div>
     </div>
     
@@ -36,8 +38,6 @@
 
 @code
 {
-    readonly StateManager _state = new StateManager();
-
     protected override void OnInitialized()
     {
         // Initialise state from URL
@@ -45,6 +45,6 @@
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         var state64 = query["state"];
         if (state64 != null)
-            _state.State = SerializedState.FromBase64(state64);
+            StateManager.Load(SerializedState.FromBase64(state64));
     }
 }

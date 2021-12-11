@@ -2,37 +2,29 @@
 @using Yolol.Execution
 @using System.Globalization
 @using System.Collections.ObjectModel
+@using BlazorYololEmulator.Client.Core
+
 @inject NavigationManager NavManager
+@inject StateManager StateManager
 
 <div>
     <textarea id="code-input" @oninput="@OnCodeChange" @onchange="@OnCodeChange">
-        @State.State.Code
+        @YololCode
     </textarea>
     
-    <div>@State.Error</div>
+    <div>@Error</div>
 </div>
 
-@code {
-
-    [Parameter]
-    public StateManager State { get; set; } = new();
+@code
+{
+    public string YololCode => StateManager.YololCode ?? "";
+    public string Error => StateManager.ParseResult.IsOk ? "" : StateManager.ParseResult.Err.Message;
 
     public void OnCodeChange(ChangeEventArgs args)
     {
         if (args.Value is not string code)
             return;
 
-        // Update state
-        State.State = new SerializedState
-        {
-            Code = code,
-            ProgramCounter = State.State.ProgramCounter,
-            Values = State.State.Values
-        };
-        
-        // Put state into URI
-        var base64 = State.State.ToBase64();
-        var uri = NavManager.GetUriWithQueryParameter("state", string.IsNullOrEmpty(base64) ? null : base64);
-        NavManager.NavigateTo(uri);
+        StateManager.YololCode = code;
     }
 }

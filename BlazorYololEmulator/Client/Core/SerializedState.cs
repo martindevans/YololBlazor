@@ -4,10 +4,12 @@ using Newtonsoft.Json;
 using Yolol.Execution;
 using Type = System.Type;
 
-namespace BlazorYololEmulator.Client
+namespace BlazorYololEmulator.Client.Core
 {
     public class SerializedState
     {
+        public static SerializedState Default { get; } = new SerializedState("", new Dictionary<string, Value>(), 0);
+
         private static readonly JsonSerializerSettings JsonConfig = new()
         {
             Converters = new JsonConverter[] {
@@ -17,9 +19,16 @@ namespace BlazorYololEmulator.Client
             FloatParseHandling = FloatParseHandling.Decimal
         };
 
-        public string Code = "";
-        public Dictionary<string, Value> Values = new();
-        public int ProgramCounter = 0;
+        public string Code { get; }
+        public IReadOnlyDictionary<string, Value> Values { get; }
+        public int ProgramCounter { get; }
+
+        public SerializedState(string code, IReadOnlyDictionary<string, Value> values, int programCounter)
+        {
+            Code = code;
+            Values = values.ToDictionary(a => a.Key, a => a.Value);
+            ProgramCounter = programCounter;
+        }
 
         public override string ToString()
         {
@@ -29,11 +38,11 @@ namespace BlazorYololEmulator.Client
         public static SerializedState FromBase64(string base64)
         {
             if (base64 == "")
-                return new SerializedState();
+                return Default;
 
             var bytes = Decompress(Convert.FromBase64String(base64));
             var json = Encoding.UTF8.GetString(bytes);
-            return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? new SerializedState();
+            return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? Default;
         }
 
         public string ToBase64()

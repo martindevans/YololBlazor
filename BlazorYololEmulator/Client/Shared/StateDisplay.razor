@@ -2,33 +2,40 @@
 @using Yolol.Execution
 @using System.Globalization
 @using System.Collections.ObjectModel
+@using BlazorYololEmulator.Client.Core
+
 @inject NavigationManager NavManager
+@inject StateManager State
+
+<div>@ProgramCounter</div>
+<div>@RuntimeError</div>
 
 <table class="table table-dark table-striped table-hover table-borderless">
     <thead>
     <tr>
-            <th scope="col">Identifier</th>
-            <th scope="col">Value</th>
-        </tr>
+        <th scope="col">Identifier</th>
+        <th scope="col">Value</th>
+    </tr>
     </thead>
     <tbody>
-        <tr>
-            <th>Line</th>
-            <td>@State.State.ProgramCounter</td>
+    @foreach (var (key, value) in State.Values)
+    {
+        <tr @key="@key">
+            <th>@key</th>
+            <td>@value</td>
         </tr>
-
-        @foreach (var (key, value) in State.State.Values)
-        {
-            <tr>
-                <th>@key</th>
-                <td>@value</td>
-            </tr>
-        }
+    }
     </tbody>
 </table>
 
+
 @code
 {
-    [Parameter]
-    public StateManager State { get; set; } = new();
+    public string? RuntimeError => State.RuntimeError;
+    public int ProgramCounter => State.ProgramCounter + 1;
+
+    protected override void OnInitialized()
+    {
+        State.OnStateChange += StateHasChanged;
+    }
 }

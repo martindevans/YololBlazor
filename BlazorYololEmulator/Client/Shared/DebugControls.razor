@@ -2,34 +2,42 @@
 @using Yolol.Execution
 @using System.Globalization
 @using System.Collections.ObjectModel
+@using BlazorYololEmulator.Client.Core
+
 @inject NavigationManager NavManager
+@inject StateManager StateManager
 
 <div class="btn-group">
-    <a href="#" class="btn btn-primary shadow-none @PlayPauseClass" @onclick="@OnClickPlayPause"><span class="oi @PlayPauseIconClass"></span></a>
-    <a href="#" class="btn btn-primary shadow-none" @onclick="@OnClickStep"><span class="oi oi-media-step-forward"></span></a>
+    <a class="btn btn-primary shadow-none" @onclick="@OnClickStop"><span class="oi oi-media-stop"></span></a>
+    <!-- todo: <a class="btn btn-primary shadow-none @PlayPauseClass" @onclick="@OnClickPlayPause"><span class="oi @PlayPauseIconClass"></span></a> -->
+    <a class="btn btn-primary shadow-none" @onclick="@OnClickStep"><span class="oi oi-media-step-forward"></span></a>
 </div>
 
-@code {
-
-    [Parameter]
-    public StateManager State { get; set; } = new();
-
-    public string PlayPauseClass => State.IsRunning ? "active" : "";
-    public string PlayPauseIconClass => State.IsRunning ? "oi-media-pause" : "oi-media-play";
+@code
+{
+    public string PlayPauseClass => StateManager.IsRunning ? "active" : "";
+    public string PlayPauseIconClass => StateManager.IsRunning ? "oi-media-pause" : "oi-media-play";
 
     void OnClickPlayPause(MouseEventArgs args)
     {
-        if (State.IsRunning)
-            State.Pause();
+        if (StateManager.IsRunning)
+            StateManager.Pause();
         else
-            State.Run();
+            StateManager.Run();
     }
 
     void OnClickStep(MouseEventArgs args)
     {
-        if (State.IsRunning)
-            State.Pause();
+        if (StateManager.IsRunning)
+            StateManager.Pause();
+        StateManager.Step();
 
-        State.Step();
+        StateHasChanged();
+    }
+
+    void OnClickStop(MouseEventArgs args)
+    {
+        StateManager.Pause();
+        StateManager.Reset();
     }
 }
