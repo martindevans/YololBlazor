@@ -1,5 +1,7 @@
 ﻿using System.IO.Compression;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Web;
 using Newtonsoft.Json;
 using Yolol.Execution;
 
@@ -31,7 +33,7 @@ public class SerializedState
         if (base64 == "")
             return Default;
 
-        var bytes = Decompress(Convert.FromBase64String(base64));
+        var bytes = Decompress(Convert.FromBase64String(HttpUtility.UrlEncode(base64)));
         var json = Encoding.UTF8.GetString(bytes);
         return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? Default;
     }
@@ -43,7 +45,7 @@ public class SerializedState
 
         var json = JsonConvert.SerializeObject(this, JsonConfig);
         var bytes = Compress(Encoding.UTF8.GetBytes(json));
-        return Convert.ToBase64String(bytes);
+        return HttpUtility.UrlEncode(Convert.ToBase64String(bytes));
     }
 
     private static byte[] Compress(byte[] data)
