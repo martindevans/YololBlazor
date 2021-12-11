@@ -28,13 +28,15 @@ public class SerializedState
     }
 
     #region serialization
-    public static SerializedState Deserialize(string base64)
+    public static SerializedState Deserialize(string urlEncoded)
     {
-        if (base64 == "")
+        if (urlEncoded == "")
             return Default;
 
-        var bytes = Decompress(Convert.FromBase64String(HttpUtility.UrlEncode(base64)));
+        var base64 = HttpUtility.UrlDecode(urlEncoded);
+        var bytes = Decompress(Convert.FromBase64String(base64));
         var json = Encoding.UTF8.GetString(bytes);
+
         return JsonConvert.DeserializeObject<SerializedState>(json, JsonConfig) ?? Default;
     }
 
@@ -45,7 +47,10 @@ public class SerializedState
 
         var json = JsonConvert.SerializeObject(this, JsonConfig);
         var bytes = Compress(Encoding.UTF8.GetBytes(json));
-        return HttpUtility.UrlEncode(Convert.ToBase64String(bytes));
+        var base64 = Convert.ToBase64String(bytes);
+        var urlEncoded = HttpUtility.UrlEncode(base64);
+
+        return urlEncoded;
     }
 
     private static byte[] Compress(byte[] data)
