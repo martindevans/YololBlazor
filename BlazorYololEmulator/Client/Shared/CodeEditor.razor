@@ -15,12 +15,13 @@
     </textarea>
 </div>
 
-<div>@Error</div>
+<div>@ParseError</div>
+<RuntimeErrorMessage />
 
 @code
 {
     public string YololCode => StateManager.YololCode;
-    public string Error => StateManager.ParseResult.IsOk ? "" : StateManager.ParseResult.Err.Message;
+    public string ParseError => StateManager.ParseResult.IsOk ? "" : StateManager.ParseResult.Err.Message;
 
     public void OnCodeChange(ChangeEventArgs args)
     {

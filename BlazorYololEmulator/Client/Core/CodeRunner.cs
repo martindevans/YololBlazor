@@ -47,11 +47,11 @@ namespace BlazorYololEmulator.Client.Core
 
             var code = _code.ParseResult.Ok;
 
+            RuntimeError = null;
             if (ProgramCounter < code.Lines.Count)
             {
                 try
                 {
-                    RuntimeError = null;
                     ProgramCounter = code.Lines[ProgramCounter].Evaluate(ProgramCounter, _machineState);
                 }
                 catch (ExecutionException ex)

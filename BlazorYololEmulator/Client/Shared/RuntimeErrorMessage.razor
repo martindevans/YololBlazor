@@ -1,0 +1,15 @@
+﻿@using BlazorYololEmulator.Client.Core
+
+@inject StateManager StateManager
+
+<div>@RuntimeError</div>
+
+@code
+{
+    public string RuntimeError => StateManager.RuntimeError ?? "";
+
+    protected override void OnInitialized()
+    {
+        StateManager.OnStateChange += StateHasChanged;
+    }
+}

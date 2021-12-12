@@ -6,6 +6,8 @@
     --body-bg: #181818;
     --body-color: #E6E6E6;
     --bs-gutter-x: 0px;
+    --program-counter-bg: #1861ac;
+    --error-highlight-bg: #b32121;
 }
 
 html, body {
@@ -56,7 +58,7 @@ html, body {
     top: 0;
     width: 100%;
 
-    background-color: #1861ac;
+    background-color: var(--program-counter-bg);
     height: 2.5ex;
 }
 
@@ -65,7 +67,7 @@ html, body {
     left: 0;
     top: 0;
     width: 100%;
-    background-color: #b32121;
+    background-color: var(--error-highlight-bg);
     height: 2.5ex;
 }
 
