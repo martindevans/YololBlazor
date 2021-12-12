@@ -57,6 +57,7 @@ namespace BlazorYololEmulator.Client.Core
                 catch (ExecutionException ex)
                 {
                     RuntimeError = ex.Message;
+                    ProgramCounter++;
                 }
             }
             else
