@@ -1,0 +1,15 @@
+﻿@using BlazorYololEmulator.Client.Core
+
+@inject NavigationManager NavManager
+@inject StateManager StateManager
+
+<div class="show-program-counter" style="top:calc(2.54ex*@ProgramCounter)"></div>
+
+@code {
+    public int ProgramCounter => StateManager.ProgramCounter;
+
+    protected override void OnInitialized()
+    {
+        StateManager.OnStateChange += StateHasChanged;
+    }
+}

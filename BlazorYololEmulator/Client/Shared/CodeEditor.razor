@@ -7,17 +7,18 @@
 @inject NavigationManager NavManager
 @inject StateManager StateManager
 
-<div>
-    <textarea id="code-input" @oninput="@OnCodeChange" @onchange="@OnCodeChange">
+<div class="code-editor-parent ">
+    <ProgramCounterHighlight />
+    <textarea class="code-input" spellcheck="false" @oninput="OnCodeChange" @onchange="OnCodeChange">
         @YololCode
     </textarea>
-    
-    <div>@Error</div>
 </div>
+
+<div>@Error</div>
 
 @code
 {
-    public string YololCode => StateManager.YololCode ?? "";
+    public string YololCode => StateManager.YololCode;
     public string Error => StateManager.ParseResult.IsOk ? "" : StateManager.ParseResult.Err.Message;
 
     public void OnCodeChange(ChangeEventArgs args)

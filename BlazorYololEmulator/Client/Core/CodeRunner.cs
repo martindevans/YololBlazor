@@ -53,15 +53,17 @@ namespace BlazorYololEmulator.Client.Core
                 {
                     RuntimeError = null;
                     ProgramCounter = code.Lines[ProgramCounter].Evaluate(ProgramCounter, _machineState);
-                    return;
                 }
                 catch (ExecutionException ex)
                 {
                     RuntimeError = ex.Message;
                 }
             }
+            else
+            {
+                ProgramCounter++;
+            }
 
-            ProgramCounter++;
             if (ProgramCounter >= 20)
                 ProgramCounter = 0;
         }
@@ -69,7 +71,7 @@ namespace BlazorYololEmulator.Client.Core
         private class DeviceNetwork
             : IDeviceNetwork, IEnumerable<KeyValuePair<string, IVariable>>
         {
-            private readonly Dictionary<string, Variable> _variables = new Dictionary<string, Variable>();
+            private readonly Dictionary<string, Variable> _variables = new();
 
             public IVariable Get(string name)
             {

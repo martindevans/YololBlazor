@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Server"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Client", "BlazorYololEmulator\Client\BlazorYololEmulator.Client.csproj", "{0090E326-9662-479F-B26D-D2D4CE294DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYololEmulator.Tests", "BlazorYololEmulator.Tests\BlazorYololEmulator.Tests.csproj", "{F9F7387E-2483-4079-858C-71643ABE2927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Tests", "BlazorYololEmulator.Tests\BlazorYololEmulator.Tests.csproj", "{F9F7387E-2483-4079-858C-71643ABE2927}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorYololEmulator.Shared", "BlazorYololEmulator\Shared\BlazorYololEmulator.Shared.csproj", "{88DAE508-31F1-41BF-B808-5298B69500DD}"
 EndProject
