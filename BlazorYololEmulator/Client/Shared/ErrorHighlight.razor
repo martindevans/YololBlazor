@@ -1,0 +1,18 @@
+﻿@using BlazorYololEmulator.Client.Core
+
+@inject NavigationManager NavManager
+@inject StateManager StateManager
+
+<div class="show-error-line" style="top: calc(2.5ex * @ErrorLine + 0.5ex); visibility: @VisibilityProperty;"></div>
+
+@code {
+    public int ProgramCounter => StateManager.ProgramCounter;
+
+    public string VisibilityProperty => StateManager.ParseResult.IsOk ? "hidden" : "visible";
+    public int ErrorLine => StateManager.ParseResult.IsOk ? 0 : (StateManager.ParseResult.Err.Cursor?.Line - 1) ?? 0;
+
+    protected override void OnInitialized()
+    {
+        StateManager.OnStateChange += StateHasChanged;
+    }
+}

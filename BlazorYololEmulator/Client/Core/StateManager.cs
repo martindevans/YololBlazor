@@ -19,6 +19,7 @@ namespace BlazorYololEmulator.Client.Core
             {
                 _code.YololCode = value;
                 UpdateUrl();
+                OnStateChange?.Invoke();
             }
         }
         public string? RuntimeError => _runner.RuntimeError;

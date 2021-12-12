@@ -60,6 +60,15 @@ html, body {
     height: 2.5ex;
 }
 
+.show-error-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #b32121;
+    height: 2.5ex;
+}
+
 .code-underlay {
     position: absolute;
     left: 0;
