@@ -1,6 +1,7 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
 
 :root {
     --body-bg: #181818;
@@ -33,7 +34,7 @@ html, body {
     position: relative;
     resize: none;
     width: 71ch;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Fira Mono', monospace;
     line-height: 2.5ex;
     height: calc(2.5*20.4ex);
     background-color: var(--body-bg);
