@@ -19,7 +19,7 @@
     {
         <tr @key="@key">
             <th>@key</th>
-            <td>@value</td>
+            <td>@Stringify(value)</td>
         </tr>
     }
     </tbody>
@@ -34,5 +34,12 @@
     protected override void OnInitialized()
     {
         State.OnStateChange += StateHasChanged;
+    }
+
+    public string Stringify(Value value)
+    {
+        return value.Type == Yolol.Execution.Type.String
+             ? $"\"{value}\""
+             : value.ToString();
     }
 }
