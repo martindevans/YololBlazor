@@ -19,7 +19,9 @@
     {
         <tr @key="@key">
             <th>@key</th>
-            <td>@Stringify(value)</td>
+            <td class="state-item">
+                <StateItem Key=@key></StateItem>
+            </td>
         </tr>
     }
     </tbody>
@@ -28,18 +30,8 @@
 
 @code
 {
-    public string? RuntimeError => State.RuntimeError;
-    public int ProgramCounter => State.ProgramCounter + 1;
-
     protected override void OnInitialized()
     {
         State.OnStateChange += StateHasChanged;
-    }
-
-    public string Stringify(Value value)
-    {
-        return value.Type == Yolol.Execution.Type.String
-             ? $"\"{value}\""
-             : value.ToString();
     }
 }

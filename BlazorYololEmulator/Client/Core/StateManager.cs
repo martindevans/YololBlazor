@@ -24,8 +24,6 @@ namespace BlazorYololEmulator.Client.Core
         }
         public string? RuntimeError => _runner.RuntimeError;
 
-        public bool IsRunning { get; set; }
-
         public int ProgramCounter => _runner.ProgramCounter;
         public IEnumerable<(string, Value)> Values => _runner.Values.Select(a => (a.Key, a.Value.Value));
 
@@ -36,6 +34,34 @@ namespace BlazorYololEmulator.Client.Core
             _navManager = navManager;
             _code = code;
             _runner = runner;
+        }
+
+        public void SetVariable(string key, string value)
+        {
+            var v = ParseValue(value);
+            if (!v.HasValue)
+                return;
+
+            _runner.SetValue(key, v.Value);
+
+            UpdateUrl();
+            OnStateChange?.Invoke();
+        }
+
+        private Value? ParseValue(string value)
+        {
+            if (value.Length >= 2 && value.StartsWith('"') && value.EndsWith('"'))
+                return new Value(value[1..^1]);
+
+            if (decimal.TryParse(value, out var result))
+                return new Value((Number)result);
+
+            return null;
+        }
+
+        public Value GetVariable(string key)
+        {
+            return _runner.GetValue(key);
         }
 
         public void Load(SerializedState state)
@@ -61,29 +87,10 @@ namespace BlazorYololEmulator.Client.Core
             _navManager.NavigateTo(uri);
         }
 
-        public void Pause()
-        {
-            if (!IsRunning)
-                return;
-            IsRunning = false;
-
-            // todo: stop execution
-        }
-
-        public void Run()
-        {
-            if (IsRunning)
-                return;
-            IsRunning = true;
-
-            // todo: start execution
-        }
-
         public void Step()
         {
             if (!ParseResult.IsOk)
                 return;
-            Pause();
 
             _runner.Step();
             UpdateUrl();
@@ -92,8 +99,6 @@ namespace BlazorYololEmulator.Client.Core
 
         public void Reset()
         {
-            Pause();
-
             _runner.Reset();
             OnStateChange?.Invoke();
             UpdateUrl();

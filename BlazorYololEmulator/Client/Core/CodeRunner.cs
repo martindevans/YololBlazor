@@ -69,6 +69,17 @@ namespace BlazorYololEmulator.Client.Core
                 ProgramCounter = 0;
         }
 
+        public Value GetValue(string key)
+        {
+            return _machineState.GetVariable(key).Value;
+        }
+
+        public void SetValue(string key, Value value)
+        {
+            var v = _machineState.GetVariable(key);
+            v.Value = value;
+        }
+
         private class DeviceNetwork
             : IDeviceNetwork, IEnumerable<KeyValuePair<string, IVariable>>
         {

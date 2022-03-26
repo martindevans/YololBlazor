@@ -1,0 +1,41 @@
+﻿@using Yolol.Execution
+@using BlazorYololEmulator.Client.Core
+@using System.ComponentModel.DataAnnotations
+
+@inject NavigationManager NavManager
+@inject StateManager State
+
+<input x-yolol-key="@Key" value="@ValueString" contenteditable="True" @oninput="OnChange" @onchange="OnChange" />
+
+@code
+{
+    [Parameter]
+    [EditorRequired]
+    public string Key { get; set; } = null!;
+
+    public Value Value => State.GetVariable(Key);
+
+    public string ValueString
+    {
+        get
+        {
+            var value = Value;
+            return value.Type == Yolol.Execution.Type.String
+                ? $"\"{value}\""
+                : value.ToString();
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        State.OnStateChange += StateHasChanged;
+    }
+
+    public void OnChange(ChangeEventArgs args)
+    {
+        if (args.Value is not string value)
+            return;
+
+        State.SetVariable(Key, value);
+    }
+}

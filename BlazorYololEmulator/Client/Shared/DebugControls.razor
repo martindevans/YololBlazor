@@ -9,35 +9,18 @@
 
 <div class="btn-group">
     <a class="btn btn-primary shadow-none" @onclick="@OnClickStop"><span class="oi oi-media-stop"></span></a>
-    <!-- todo: <a class="btn btn-primary shadow-none @PlayPauseClass" @onclick="@OnClickPlayPause"><span class="oi @PlayPauseIconClass"></span></a> -->
     <a class="btn btn-primary shadow-none" @onclick="@OnClickStep"><span class="oi oi-media-step-forward"></span></a>
 </div>
 
 @code
 {
-    public string PlayPauseClass => StateManager.IsRunning ? "active" : "";
-    public string PlayPauseIconClass => StateManager.IsRunning ? "oi-media-pause" : "oi-media-play";
-
-    void OnClickPlayPause(MouseEventArgs args)
-    {
-        if (StateManager.IsRunning)
-            StateManager.Pause();
-        else
-            StateManager.Run();
-    }
-
     void OnClickStep(MouseEventArgs args)
     {
-        if (StateManager.IsRunning)
-            StateManager.Pause();
         StateManager.Step();
-
-        StateHasChanged();
     }
 
     void OnClickStop(MouseEventArgs args)
     {
-        StateManager.Pause();
         StateManager.Reset();
     }
 }

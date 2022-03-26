@@ -1,6 +1,5 @@
 ﻿using System.IO.Compression;
 using System.Text;
-using System.Web;
 using Newtonsoft.Json;
 using Yolol.Execution;
 
@@ -57,11 +56,17 @@ public class SerializedState
     private static string UrlEncode(byte[] bytes)
     {
         return Convert.ToHexString(bytes);
+
+        //todo: more compact form, swap to this sometime
+        //return WebUtility.UrlEncode(Convert.ToBase64String(bytes));
     }
 
     private static byte[] UrlDecode(string encoded)
     {
         return Convert.FromHexString(encoded);
+
+        //todo: more compact form, swap to this sometime
+        //return Convert.FromBase64String(WebUtility.UrlDecode(encoded));
     }
 
     private static byte[] Compress(byte[] data)
