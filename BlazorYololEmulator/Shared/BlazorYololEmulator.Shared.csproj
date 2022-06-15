@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Yolol" Version="14.13.1" />
+    <PackageReference Include="Yolol" Version="14.14.0" />
   </ItemGroup>
 
 </Project>
