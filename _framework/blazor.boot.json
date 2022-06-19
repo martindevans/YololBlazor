@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazorYololEmulator.Client.dll": "sha256-7p+BFKRYyrZKQuB74f0xF4RhpvrpYoP+nc0lsYHPTNQ=",
-      "BlazorYololEmulator.Shared.dll": "sha256-7CCEXnFJar+s4YOrzUeZ8PtvJTkBMbrXU9l7EvJDARM=",
+      "BlazorYololEmulator.Client.dll": "sha256-rKH9IA0eXdCeA0TMR\/SBFcVkPy8JgSc6AKNkqwbEOFU=",
+      "BlazorYololEmulator.Shared.dll": "sha256-LfOz\/tJEI5ZPpFLieX\/M8k9wzJePz\/TU2mks+seRDUQ=",
       "Microsoft.AspNetCore.Components.dll": "sha256-Up0RZAL9ra2fF1Wv4vN0BoUd3D7aCS3U0IhZVriLHfE=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-kE96De54UijQra9Mh2M2\/GuIqlNfx2+EVtmcTincWFA=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-\/Dy2ObLVYzJ6Xlan\/StjJDmeXXNbucbohR2dQMoH3Zo=",
@@ -46,7 +46,7 @@
       "System.Net.Http.dll": "sha256-C2SXDGdol2CZtXdVlAFGLywsM+N26hyJ4+AxBsBCEDk=",
       "System.Net.Primitives.dll": "sha256-uVINitbWyy\/vnUat3PXznQZpypn9D0a3spTBqCHRzaI=",
       "System.ObjectModel.dll": "sha256-dfSs6TSmCVOL8NXlfKgiCE0u0etENSZ07lVAQHVrbzc=",
-      "System.Private.CoreLib.dll": "sha256-BZrPdOlvJhPeDYJMAg2ktfHcHiKO7CIRgBh0tqO3\/Us=",
+      "System.Private.CoreLib.dll": "sha256-EJbDBTyO8Yul4P3sNegfAYGUrM77IjwoYbHSL69qFJQ=",
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-vBj7wVFYB3hshq\/\/oL9qmvJrIvD06m77QtfmdFszBPQ=",
       "System.Private.Uri.dll": "sha256-2pMyoRoQZyEY8e43+rhj1HnxW1vQbCZ+MViwRw6h\/w8=",
       "System.Private.Xml.dll": "sha256-Eitdij03iujo+fOt1M5dwP+CWtHlPXdXBZdfrr3C7lE=",
@@ -63,7 +63,7 @@
       "System.Text.RegularExpressions.dll": "sha256-RyQ\/kbqfdrHFaVqD7ShetHL1OUZ0awvNkx\/PQx4pvJY=",
       "System.Threading.dll": "sha256-Gypn2XnbFEACXsRuVoK393ZbAa+xUg6hC1DWe99d5tY=",
       "System.Web.HttpUtility.dll": "sha256-DzgZvev4kNfWWVTmaoymBoPWJOI14SnH+aQExQak55I=",
-      "Yolol.dll": "sha256-2jryN1TcmS5v9yROLQoEWIk8lCBMZ85KkrQELw5CMew="
+      "Yolol.dll": "sha256-BWYIhlgdtwkhqu+UNgBEtp5sVawda9Kssc9qbw+Idzg="
     },
     "extensions": null,
     "lazyAssembly": null,
