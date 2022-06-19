@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" PrivateAssets="all" />
-    <PackageReference Include="Yolol" Version="14.14.0" />
+    <PackageReference Include="Yolol" Version="14.15.0" />
   </ItemGroup>
 
   <ItemGroup>
